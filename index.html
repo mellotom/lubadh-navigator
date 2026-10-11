@@ -43,11 +43,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--cD7BB7D);outline-of
 </style>
 <style>
 html,body{margin:0;background:var(--c232425)}
-.home{display:flex;align-items:center;min-height:34px;padding:6px max(16px,2.5vw) 0;box-sizing:border-box}
-.home a{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border:1px solid var(--c3D3E40);color:var(--cA3A6A6);text-decoration:none;font-family:'Roboto Mono',monospace;font-weight:500;font-size:12px;line-height:1.4}
-.home a:hover{color:var(--cF2F0EA);border-color:var(--cF2F0EA)}
-.home a:focus-visible{outline:2px solid var(--cF2F0EA);outline-offset:2px}
-@media print{.home{display:none!important}}
 #frame{position:relative;overflow:hidden;background:var(--c232425);width:100vw;height:56.25vw}
 @page{size:landscape;margin:0}
 @media print{html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
@@ -89,7 +84,6 @@ html,body{margin:0;background:var(--c232425)}
 <style>:root{--c232425:#232425;--c2B2C2E:#2B2C2E;--cF2F0EA:#F2F0EA;--cD9DAD7:#D9DAD7;--cA3A6A6:#A3A6A6;--c3D3E40:#3D3E40;--cD7BB7D:#D7BB7D;--cF2A23C:#F2A23C;--cE5654E:#E5654E;--c45464A:#45464A;--c3A3B3D:#3A3B3D;--cEAD7A5:#EAD7A5;--c6C6F71:#6C6F71;--c5A5C5E:#5A5C5E;}html[data-theme="alt"]{--c232425:#F3EFE6;--c2B2C2E:#E9E4D8;--cF2F0EA:#1D1D1B;--cD9DAD7:#36352F;--cA3A6A6:#6B685F;--c3D3E40:#D6D0C2;--cD7BB7D:#8F6F25;--cF2A23C:#B5620A;--cE5654E:#B83A26;--c45464A:#CBC4B4;--c3A3B3D:#D3CDBE;--cEAD7A5:#6E5419;--c6C6F71:#A39D8E;--c5A5C5E:#B5AE9F;}.tm{font:inherit;color:inherit;background:none;border:0;padding:0 2px;margin:0;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}.tm[aria-pressed="true"]{font-weight:700;text-decoration:none;color:var(--cD7BB7D)}.tm:focus-visible{outline:2px solid currentColor;outline-offset:2px}@media print{.tm-line{display:none!important}}@media (max-width:899px){.tm-line{order:3;align-items:flex-start!important}}</style>
 </head>
 <body>
-<nav class="home noprint" aria-label="site"><a href="https://mellotom.github.io/travelers-guide/"><span aria-hidden="true">‹</span> return to welcome center</a></nav>
 <div id="frame">
 <div id="sheet" style="position: absolute; top: 0; left: 0; width: 2560px; height: 1440px; transform-origin: 0 0; box-sizing: border-box; background: var(--c232425); color: var(--cF2F0EA); display: flex; flex-direction: column; padding: 0 64px">
 <div class="crop" style="top: 24px; left: 24px; border-top: 2px solid var(--cD7BB7D); border-left: 2px solid var(--cD7BB7D)" aria-hidden="true"></div>
@@ -101,7 +95,7 @@ html,body{margin:0;background:var(--c232425)}
 <header style="padding-top: 30px; display: flex; flex-direction: column; gap: 14px">
 <div class="m-slugs" style="display: flex; justify-content: space-between; font-family: 'Roboto Mono', monospace; font-size: 10.5px; line-height: 1.45; color: var(--cF2F0EA)">
 <div style="display: flex; flex-direction: column"><span style="font-weight: 600">lubadh-navigator .......... 00.10_01</span><span>lúbadh fw .......... <a href="https://www.instruomodular.com/wp-content/uploads/2025/03/Lubadh-V2.1-Quickstart.pdf" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px">v2.1 quickstart</a></span></div>
-<div class="tm-line" style="display: flex; flex-direction: column; align-items: center"><span>mode ....................... <button type="button" class="tm" data-t="alt" aria-pressed="false">light</button>/<button type="button" class="tm" data-t="native" aria-pressed="false">dark</button></span></div>
+<div class="tm-line" style="display: flex; flex-direction: column; align-items: center"><span>return to .............. <a class="tm" href="https://mellotom.github.io/travelers-guide/">welcome center</a></span><span>mode ....................... <button type="button" class="tm" data-t="alt" aria-pressed="false">light</button>/<button type="button" class="tm" data-t="native" aria-pressed="false">dark</button></span></div>
 <div style="display: flex; flex-direction: column; text-align: right"><span>source ............... <a href="https://www.instruomodular.com/wp-content/uploads/2023/11/Lubadh-Manual-Firmare-V2-A5-.pdf" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px">instruo manual v2</a></span><span>rev ............................ 2026.10</span></div>
 </div>
 <div class="m-hgrid" style="display: grid; grid-template-columns: minmax(0, 1fr) 720px; gap: 56px; align-items: end">
