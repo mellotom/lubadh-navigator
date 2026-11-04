@@ -43,13 +43,13 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--cD7BB7D);outline-of
 </style>
 <style>
 html,body{margin:0;background:var(--c232425)}
-#frame{position:relative;overflow:hidden;background:var(--c232425);width:100vw;height:56.25vw}
+:is(#frame,#frame2){position:relative;overflow:hidden;background:var(--c232425);width:100vw;height:56.25vw}
 @page{size:landscape;margin:0}
 @media print{html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 
 @media screen and (max-width: 899px){
-#frame{width:auto!important;height:auto!important;overflow:visible!important}
-#sheet{position:static!important;width:auto!important;height:auto!important;transform:none!important;padding:0 16px!important}
+:is(#frame,#frame2){width:auto!important;height:auto!important;overflow:visible!important}
+:is(#sheet,#sheet2){position:static!important;width:auto!important;height:auto!important;transform:none!important;padding:0 16px!important}
 .crop,.m-hide{display:none!important}
 .m-slugs{flex-direction:column;gap:8px;padding-top:4px}
 .m-slugs>div{text-align:left!important}
@@ -83,7 +83,47 @@ html,body{margin:0;background:var(--c232425)}
 </style>
 <style>:root{--c232425:#232425;--c2B2C2E:#2B2C2E;--cF2F0EA:#F2F0EA;--cD9DAD7:#D9DAD7;--cA3A6A6:#A3A6A6;--c3D3E40:#3D3E40;--cD7BB7D:#D7BB7D;--cF2A23C:#F2A23C;--cE5654E:#E5654E;--c45464A:#45464A;--c3A3B3D:#3A3B3D;--cEAD7A5:#EAD7A5;--c6C6F71:#6C6F71;--c5A5C5E:#5A5C5E;}html[data-theme="alt"]{--c232425:#F3EFE6;--c2B2C2E:#E9E4D8;--cF2F0EA:#1D1D1B;--cD9DAD7:#36352F;--cA3A6A6:#6B685F;--c3D3E40:#D6D0C2;--cD7BB7D:#8F6F25;--cF2A23C:#B5620A;--cE5654E:#B83A26;--c45464A:#CBC4B4;--c3A3B3D:#D3CDBE;--cEAD7A5:#6E5419;--c6C6F71:#A39D8E;--c5A5C5E:#B5AE9F;}.tm{font:inherit;color:inherit;background:none;border:0;padding:0 2px;margin:0;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}.tm[aria-pressed="true"]{font-weight:700;text-decoration:none;color:var(--cD7BB7D)}.tm:focus-visible{outline:2px solid currentColor;outline-offset:2px}@media print{.tm-line,.gc{display:none!important}}@media screen and (max-width:899px){.tm-line{order:-1;align-items:flex-start!important}.gc{position:static!important}}</style>
 <style id="pl">@media print{:root:not([data-pdf]) html,:root:not([data-pdf]) body{width:auto!important;min-width:0!important;height:auto!important;overflow:visible!important;margin:0!important}:root:not([data-pdf]) #frame,:root:not([data-pdf]) #frame2,:root:not([data-pdf]) .frame{display:block!important;position:relative!important;width:1056px!important;height:594px!important;overflow:hidden!important;break-inside:avoid;page-break-inside:avoid}:root:not([data-pdf]) #sheet,:root:not([data-pdf]) #sheet2,:root:not([data-pdf]) .frame>.sheet{position:absolute!important;top:0!important;left:0!important;width:2560px!important;height:1440px!important;transform:scale(.4125)!important;transform-origin:0 0!important;padding:0!important}:root:not([data-pdf]) #frame2,:root:not([data-pdf]) .frame+.frame{break-before:page;page-break-before:always}}</style>
-<style id="pf">@media print{:root:not([data-pdf]),:root:not([data-pdf])[data-theme]{--c232425:#FFFFFF!important;--c2B2C2E:#FFFFFF!important;--cF2F0EA:#000000!important;--cD9DAD7:#000000!important;--cA3A6A6:#3A3A3A!important;--c3D3E40:#FFFFFF!important;--cD7BB7D:#8F6F25!important;--cF2A23C:#B5620A!important;--cE5654E:#B83A26!important;--c45464A:#CBC4B4!important;--c3A3B3D:#FFFFFF!important;--cEAD7A5:#6E5419!important;--c6C6F71:#A39D8E!important;--c5A5C5E:#B5AE9F!important}:root:not([data-pdf]) body,:root:not([data-pdf]) #frame,:root:not([data-pdf]) #sheet,:root:not([data-pdf])[data-theme] body,:root:not([data-pdf])[data-theme] #frame,:root:not([data-pdf])[data-theme] #sheet{background:#FFFFFF!important;background-image:none!important}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style>
+<style id="pf">@media print{:root:not([data-pdf]),:root:not([data-pdf])[data-theme]{--c232425:#FFFFFF!important;--c2B2C2E:#FFFFFF!important;--cF2F0EA:#000000!important;--cD9DAD7:#000000!important;--cA3A6A6:#3A3A3A!important;--c3D3E40:#FFFFFF!important;--cD7BB7D:#8F6F25!important;--cF2A23C:#B5620A!important;--cE5654E:#B83A26!important;--c45464A:#CBC4B4!important;--c3A3B3D:#FFFFFF!important;--cEAD7A5:#6E5419!important;--c6C6F71:#A39D8E!important;--c5A5C5E:#B5AE9F!important}:root:not([data-pdf]) body,:root:not([data-pdf]) #frame,:root:not([data-pdf]) #sheet,:root:not([data-pdf]) #frame2,:root:not([data-pdf]) #sheet2,:root:not([data-pdf])[data-theme] body,:root:not([data-pdf])[data-theme] #frame,:root:not([data-pdf])[data-theme] #sheet,:root:not([data-pdf])[data-theme] #frame2,:root:not([data-pdf])[data-theme] #sheet2{background:#FFFFFF!important;background-image:none!important}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style>
+<style id="lp-css">
+@media print{#frame2{break-before:page}.lbtn,#lp-drop,#lp-status{display:none!important}}
+.lp .kc{line-height:1.4}
+.lval{color:var(--cD7BB7D)!important;margin-right:4px;white-space:normal!important}
+.lch{box-shadow:inset 3px 0 0 var(--cE5654E);padding-left:8px!important}
+.lwas{font-family:'Roboto Mono',monospace;font-weight:700;font-size:9.5px;line-height:1.3;color:var(--cE5654E);padding-top:2px}
+.lwarn{font-family:'Roboto Mono',monospace;font-size:10px;font-weight:700;color:var(--cE5654E)}
+.ldim{opacity:.45}
+.lbt{position:relative;height:7px;background:var(--c3D3E40);margin:4px 0 4px}
+.lbf{position:absolute;left:0;top:0;bottom:0;background:var(--cD7BB7D)}
+.lbb{position:absolute;top:-3px;bottom:-3px;width:2px;margin-left:-1px;background:var(--cF2F0EA)}
+.lbar .a{font-size:12px}
+#lp-drop{border:2px dashed var(--cD7BB7D);padding:16px 12px;text-align:center;font-family:'Roboto Mono',monospace;font-size:11.5px;font-weight:600;color:var(--cF2F0EA);cursor:pointer;margin:6px 0 8px;line-height:1.5}
+#lp-drop.lon{background:var(--c2B2C2E)}
+#lp-drop span{display:block;font-weight:400;color:var(--cA3A6A6);font-size:10.5px}
+.lbtns{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 6px}
+.lbtn{font-family:'Roboto Mono',monospace;font-weight:700;font-size:11px;color:var(--cF2F0EA);background:none;border:1.5px solid var(--cF2F0EA);padding:5px 10px;cursor:pointer}
+.lbtn:hover{background:var(--cD7BB7D);color:#181919;border-color:var(--cD7BB7D)}
+.lbs{font-size:9.5px;padding:1px 6px;margin-left:4px}
+#lp-status{font-family:'Roboto Mono',monospace;font-size:10.5px;color:var(--cA3A6A6);min-height:15px}
+.lpl{font-family:'Archivo',sans-serif;font-size:13px;line-height:1.38;color:var(--cF2F0EA);padding:4px 0;border-top:1px solid var(--c45464A)}
+.ldr{display:grid;grid-template-columns:minmax(0,38%) minmax(0,1fr);column-gap:10px;padding:4px 0;border-top:1px solid var(--c45464A);font-family:'Archivo',sans-serif;font-size:12.5px;line-height:1.35}
+.ldr .ldv{color:var(--cD7BB7D);font-family:'Roboto Mono',monospace;font-size:11px;font-weight:600}
+.ldr .ldo{grid-column:2;color:var(--cA3A6A6);font-family:'Roboto Mono',monospace;font-size:10px}
+.ldr:only-child .ldo{grid-column:1/span 2}
+.lpz{color:var(--cD7BB7D)}
+.lraw{display:flex;flex-direction:column;font-family:'Roboto Mono',monospace;font-size:10.5px;line-height:1.55;padding-top:4px}
+.lrw{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:10px;border-bottom:1px dotted var(--c45464A);color:var(--cA3A6A6);white-space:nowrap;overflow:hidden}
+.lrw b{color:var(--cF2F0EA);font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.lrw i{font-style:normal;color:var(--cA3A6A6);overflow:hidden;text-overflow:ellipsis}
+.lrc{color:var(--cE5654E)}
+.lrc b{color:var(--cE5654E)}
+.lpoff{opacity:.5}
+.lph{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-top:4px solid var(--cD7BB7D);margin-top:12px;padding-top:8px;padding-bottom:8px;border-bottom:1px solid var(--c45464A);margin-bottom:4px}
+.lph h2{margin:0;font-family:'Archivo',sans-serif;font-weight:900;font-size:27px;line-height:1;letter-spacing:-.02em}
+.lph span{font-family:'Roboto Mono',monospace;font-size:10px;color:var(--cD7BB7D)}
+.lfig{display:flex;justify-content:space-between;align-items:baseline;border-top:4px solid var(--cF2F0EA);padding-top:6px;margin-bottom:4px}
+.lfig span:first-child{font-family:'Archivo',sans-serif;font-weight:900;font-size:20px;letter-spacing:-.015em}
+@media screen and (max-width: 899px){#frame2 .m-strip span:nth-child(2){display:none}#frame2 .m-hgrid span[id^="lp-"]{font-size:20px!important}#frame2 .m-strip{word-break:break-word}}
+</style>
 </head>
 <body><script id="zl">(function(){var d0=window.devicePixelRatio||1,R=null,mob=null;window.__ew=function(){return Math.round(document.documentElement.clientWidth*(window.devicePixelRatio||1)/d0);};function grab(){R=[];for(var i=0;i<document.styleSheets.length;i++){var c;try{c=document.styleSheets[i].cssRules}catch(e){continue}for(var j=0;j<c.length;j++){var x=c[j];if(x.media&&/max-width:\s*899px/.test(x.media.mediaText))R.push(x);}}}function mq(){if(!R)grab();var m=window.__ew()<900;if(m===mob)return;mob=m;R.forEach(function(x){x.media.mediaText=m?"screen":"not all";});}mq();window.addEventListener("resize",mq);})();</script>
 <div id="frame">
@@ -115,7 +155,7 @@ html,body{margin:0;background:var(--c232425)}
 </div>
 </header>
 <div class="m-stripes" style="display: flex; flex-direction: column; gap: 3px; margin: 16px -64px 0" aria-hidden="true"><div style="height: 3px; background: #F4E7C5"></div><div style="height: 3px; background: #ECD9A9"></div><div style="height: 3px; background: #E3CB91"></div><div style="height: 3px; background: var(--cD7BB7D)"></div><div style="height: 3px; background: #CCAB68"></div><div style="height: 3px; background: #C09B55"></div><div style="height: 3px; background: #B38B45"></div><div style="height: 3px; background: #A27B3A"></div><div style="height: 3px; background: #70767B"></div></div>
-<div class="m-strip" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--cD7BB7D); font-family: 'Roboto Mono', monospace; font-size: 10.5px; color: var(--cA3A6A6)"><span>every control is per deck: left and right are identical</span><span>combos shown for one deck · mirror them for the other</span><span style="color: var(--cF2A23C)">amber = hold</span></div>
+<div class="m-strip" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--cD7BB7D); font-family: 'Roboto Mono', monospace; font-size: 10.5px; color: var(--cA3A6A6)"><span>every control is per deck: left and right are identical</span><span>combos shown for one deck · mirror them for the other · <a href="#frame2" style="color: var(--cD7BB7D); text-decoration: underline; text-underline-offset: 2px">◆ your own preset: sheet 2 ↓</a></span><span style="color: var(--cF2A23C)">amber = hold</span></div>
 <div class="m-grid" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.55fr); gap: 28px; padding-top: 14px; align-items: stretch; flex: 1; min-height: 0">
 <div class="col" style="align-self: stretch">
 <section class="sec">
@@ -294,15 +334,104 @@ html,body{margin:0;background:var(--c232425)}
 </footer>
 </div>
 </div>
+<div id="frame2">
+<div id="sheet2" style="position: absolute; top: 0; left: 0; width: 2560px; height: 1440px; transform-origin: 0 0; box-sizing: border-box; background: var(--c232425); color: var(--cF2F0EA); display: flex; flex-direction: column; padding: 0 64px">
+<div class="crop" style="top: 24px; left: 24px; border-top: 2px solid var(--cD7BB7D); border-left: 2px solid var(--cD7BB7D)" aria-hidden="true"></div>
+<div class="crop" style="top: 24px; right: 24px; border-top: 2px solid var(--cD7BB7D); border-right: 2px solid var(--cD7BB7D)" aria-hidden="true"></div>
+<div class="crop" style="bottom: 24px; left: 24px; border-bottom: 2px solid var(--cD7BB7D); border-left: 2px solid var(--cD7BB7D)" aria-hidden="true"></div>
+<div class="crop" style="bottom: 24px; right: 24px; border-bottom: 2px solid var(--cD7BB7D); border-right: 2px solid var(--cD7BB7D)" aria-hidden="true"></div>
+<div class="m-hide" style="position: absolute; left: 26px; top: 360px; bottom: 120px; width: 14px; background: repeating-linear-gradient(to bottom, var(--cD7BB7D) 0 2px, transparent 2px 28px)" aria-hidden="true"></div>
+<div class="m-hide" style="position: absolute; right: 26px; top: 360px; bottom: 120px; width: 14px; background: repeating-linear-gradient(to bottom, var(--cD7BB7D) 0 2px, transparent 2px 28px)" aria-hidden="true"></div>
+<header style="padding-top: 30px; display: flex; flex-direction: column; gap: 14px">
+<div class="m-slugs" style="display: flex; justify-content: space-between; font-family: 'Roboto Mono', monospace; font-size: 10.5px; line-height: 1.45; color: var(--cF2F0EA)">
+<div style="display: flex; flex-direction: column"><span style="font-weight: 600">lubadh-navigator .......... 00.10_02</span><span>lúbadh fw .......... <a href="https://www.instruomodular.com/wp-content/uploads/2025/03/Lubadh-V2.1-Quickstart.pdf" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px">v2.1 quickstart</a></span></div>
+<div style="display: flex; flex-direction: column; text-align: right; position: relative"><span>source ............... <a href="https://www.instruomodular.com/wp-content/uploads/2023/11/Lubadh-Manual-Firmare-V2-A5-.pdf" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px">instruo manual v2</a></span><span>rev ............................ 2026.10</span></div>
+</div>
+<div class="m-hgrid" style="display: grid; grid-template-columns: minmax(0, 1fr) 720px; gap: 56px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+<div class="m-titlerow" style="display: flex; align-items: flex-end; gap: 28px">
+<h1 class="m-h1" style="margin: 0; font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 124px; line-height: .8; letter-spacing: -.035em">your preset</h1>
+<div class="m-sub" style="display: flex; flex-direction: column; gap: 3px; padding-bottom: 2px; font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 32px; line-height: .95; letter-spacing: -.02em"><span>_travelers guide</span><span style="color: var(--cD7BB7D)">_for decoding your own time loops</span></div>
+</div>
+<div style="height: 14px; background: var(--cD7BB7D)"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--cD7BB7D); border-left: 2px solid var(--cD7BB7D)"><div style="padding: 7px 10px; border-right: 2px solid var(--cD7BB7D); border-bottom: 2px solid var(--cD7BB7D); display: flex; align-items: baseline; gap: 10px"><span id="lp-nchg" style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 30px; line-height: 1; letter-spacing: -.02em; color: var(--cF2F0EA)">0</span><span style="font-family: 'Roboto Mono', monospace; font-size: 10px; color: var(--cA3A6A6); white-space: nowrap">changed from tape-looper</span></div><div style="padding: 7px 10px; border-right: 2px solid var(--cD7BB7D); border-bottom: 2px solid var(--cD7BB7D); display: flex; align-items: baseline; gap: 10px"><span id="lp-stat-mt" style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 30px; line-height: 1; letter-spacing: -.02em; color: var(--cF2F0EA)">off</span><span style="font-family: 'Roboto Mono', monospace; font-size: 10px; color: var(--cA3A6A6); white-space: nowrap">multi-tap</span></div><div style="padding: 7px 10px; border-right: 2px solid var(--cD7BB7D); border-bottom: 2px solid var(--cD7BB7D); display: flex; align-items: baseline; gap: 10px"><span id="lp-stat-sc" style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 30px; line-height: 1; letter-spacing: -.02em; color: var(--cD7BB7D)">notched</span><span style="font-family: 'Roboto Mono', monospace; font-size: 10px; color: var(--cA3A6A6); white-space: nowrap">speed control</span></div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: 'Roboto Mono', monospace; font-size: 11px; color: var(--cD9DAD7); align-items: baseline"><span>drop a preset .txt</span><span>› read in your browser, never uploaded</span><span>share link</span><span>download .txt</span><span style="color: var(--cE5654E); font-weight: 700">◆ = changed from tape-looper</span></div>
+</div>
+</div>
+</header>
+<div class="m-stripes" style="display: flex; flex-direction: column; gap: 3px; margin: 16px -64px 0" aria-hidden="true"><div style="height: 3px; background: #F4E7C5"></div><div style="height: 3px; background: #ECD9A9"></div><div style="height: 3px; background: #E3CB91"></div><div style="height: 3px; background: var(--cD7BB7D)"></div><div style="height: 3px; background: #CCAB68"></div><div style="height: 3px; background: #C09B55"></div><div style="height: 3px; background: #B38B45"></div><div style="height: 3px; background: #A27B3A"></div><div style="height: 3px; background: #70767B"></div></div>
+<div class="m-strip" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--cD7BB7D); font-family: 'Roboto Mono', monospace; font-size: 10.5px; color: var(--cA3A6A6)"><span>active preset: <b id="lp-name" style="color: var(--cF2F0EA)">tape-looper</b> · <span id="lp-src">factory</span></span><span>settings from the lúbadh v2.1 preset editor · instruo</span><span style="color: var(--cF2A23C)">ghosted = not used by this preset</span></div>
+<div class="m-grid" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.55fr); gap: 28px; padding-top: 14px; align-items: stretch; flex: 1; min-height: 0">
+<div class="col"><section class="sec">
+<div class="sh"><span class="sn" style="background: #F4E7C5; color: #181919">01</span><h2 class="st">load a preset</h2><span class="sc">lpr_01</span></div>
+<div id="lp-drop" role="button" tabindex="0" aria-label="drop or choose a lubadh preset file">drop a lúbadh preset .txt here<span>or click to choose one · from the usb’s presets folder</span></div>
+<input type="file" id="lp-file" accept=".txt,text/plain" hidden>
+<div class="lbtns"><button type="button" class="lbtn" id="lp-share">share link</button><button type="button" class="lbtn" id="lp-dl">download .txt</button><button type="button" class="lbtn" id="lp-reset">back to tape-looper</button></div>
+<div id="lp-status" role="status"></div>
+<div class="r"><div class="kc"><span class="v">install it</span></div><div class="a">copy the .txt into the <b>presets</b> folder on the usb · sorted a–z, the first 12 appear in the menu</div></div>
+<div class="r"><div class="kc"><span class="b">[ shift ]</span><span class="b">[ shift ]</span><i class="p">+</i><span class="b">[ erase ]</span></div><div class="a">preset menu for that deck · <span class="b">[ time ]</span> picks 1–12 · <span class="b">[ rec ]</span> loads · <span class="b">[ erase ]</span> cancels</div></div>
+</section>
+<section class="sec">
+<div class="sh"><span class="sn" style="background: #ECD9A9; color: #181919">02</span><h2 class="st">factory presets</h2><span class="sc">lpr_02 · manual p.28</span></div>
+<div id="lp-fact"></div>
+</section>
+</div>
+<div class="col"><section class="sec">
+<div class="sh"><span class="sn" style="background: #E3CB91; color: #181919">03</span><h2 class="st">speed</h2><span class="sc">lpr_03</span></div>
+<div id="lp-speed"></div>
+</section>
+<section class="sec"><div class="lfig"><span>__fig.04 : the speed knob</span><span class="sc">this preset</span></div><div id="lp-speedfig"></div></section>
+<section class="sec">
+<div class="sh"><span class="sn" style="background: #A27B3A; color: #181919">08</span><h2 class="st">touch plate</h2><span class="sc">lpr_08</span></div>
+<div id="lp-touch"></div>
+</section>
+</div>
+<div class="col"><section class="sec">
+<div class="sh"><span class="sn" style="background: var(--cD7BB7D); color: #181919">04</span><h2 class="st">time · taps</h2><span class="sc">lpr_04</span></div>
+<div id="lp-time"></div>
+</section>
+<section class="sec">
+<div class="sh"><span class="sn" style="background: #CCAB68; color: #181919">05</span><h2 class="st">rec jack · clock</h2><span class="sc">lpr_05</span></div>
+<div id="lp-clock"></div>
+</section>
+</div>
+<div class="col"><section class="sec">
+<div class="sh"><span class="sn" style="background: #C09B55; color: #181919">06</span><h2 class="st">tape</h2><span class="sc">lpr_06 · white tick = tape-looper</span></div>
+<div id="lp-tape"></div>
+</section>
+<section class="sec">
+<div class="sh"><span class="sn" style="background: #B38B45; color: #181919">07</span><h2 class="st">input filter</h2><span class="sc">lpr_07 · fig.05</span></div>
+<div id="lp-filt"></div>
+</section>
+<section class="sec"><div class="lfig"><span>__fig.05 : input filter</span><span class="sc">this preset</span></div><div id="lp-filtfig"></div></section>
+</div>
+<div class="m-panel" style="display: flex; flex-direction: column; background: var(--c2B2C2E); color: var(--cF2F0EA); border: 2px solid var(--cD7BB7D); padding: 0 26px 16px; min-width: 0; min-height: 0">
+<div style="display: flex; flex-direction: column; gap: 2px; margin: 0 -26px 12px" aria-hidden="true"><div style="height: 4px; background: #F4E7C5"></div><div style="height: 4px; background: #ECD9A9"></div><div style="height: 4px; background: #E3CB91"></div><div style="height: 4px; background: var(--cD7BB7D)"></div><div style="height: 4px; background: #CCAB68"></div></div>
+<div class="lph" style="margin-top: 0"><h2>_in plain words</h2><span>what this preset is for</span></div><div id="lp-plain"></div>
+<div class="lph"><h2>_the file</h2><span>as it would download · red = changed from tape-looper</span></div><div id="lp-raw" class="lraw"></div><div id="lp-extra"></div>
+<div class="lph"><h2>_how it works</h2><span>lpr_09</span></div>
+<div class="lpl">◆ read in your browser, never uploaded · this browser remembers the last preset</div>
+<div class="lpl">◆ sheet 1 follows along: its ◆ preset-only rows say whether they’re on</div>
+<div class="lpl">◆ share link packs every setting into the address · download writes a lúbadh .txt</div>
+</div>
+</div>
+<footer class="m-footer" style="margin-top: 12px; margin-bottom: 24px; height: 50px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.55fr); column-gap: 28px; font-family: 'Roboto Mono', monospace; font-size: 10.5px; line-height: 1.5; color: var(--cA3A6A6)">
+<div style="grid-column: 1 / span 4; border-top: 4px solid var(--cD7BB7D); display: flex; align-items: center"><span>settings and descriptions after the instruo lúbadh v2.1 preset editor and the v2 manual · factory values beyond tape-looper coming soon<br>not affiliated with instruo or marvel</span></div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; justify-content: center; padding-top: 4px; color: var(--cF2F0EA); white-space: nowrap"><span style="display: block">conceived by&nbsp;<a href="https://linktr.ee/mellotom" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px">mellotom</a>&nbsp;· lubadh-navigator ... 00.10_02</span><span style="display: block; opacity: .62">created with claude</span></div>
+</footer>
+</div>
+</div>
 <script>
 (function(){
   var f=document.getElementById('frame'), s=document.getElementById('sheet');
+  var P=[[f,s],[document.getElementById('frame2'),document.getElementById('sheet2')]];
   function fit(pw){
     var w=pw||window.__ew();
-    if(!pw && w<900){ s.style.transform=''; f.style.width=''; f.style.height=''; return; }
-    var k=w/2560;
-    s.style.transform='scale('+k+')';
-    f.style.width=w+'px'; f.style.height=(1440*k)+'px';
+    P.forEach(function(q){ var F=q[0], Sh=q[1]; if(!F||!Sh) return;
+      if(!pw && w<900){ Sh.style.transform=''; F.style.width=''; F.style.height=''; return; }
+      var k=w/2560; Sh.style.transform='scale('+k+')'; F.style.width=w+'px'; F.style.height=(1440*k)+'px'; });
   }
   var bt=document.querySelector('.m-btns'), home=bt&&bt.parentNode, ph=document.createComment('buttons');
   if(bt) home.insertBefore(ph,bt);
@@ -317,5 +446,204 @@ html,body{margin:0;background:var(--c232425)}
 <script>(function(){var r=document.documentElement,K="hn-mode",NAT="dark",ALTN="light";var btns=document.querySelectorAll("button.tm[data-t]");function set(t,save){if(t==="alt"){r.setAttribute("data-theme","alt");}else{r.removeAttribute("data-theme");t="native";}btns.forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-t")===t));});document.querySelectorAll("a[download]").forEach(function(a){a.setAttribute("href",t==="alt"?"lubadh-navigator-light.pdf":"lubadh-navigator.pdf");});if(save){try{localStorage.setItem(K,t==="alt"?ALTN:NAT);}catch(e){}}}function load(){var v=null;try{v=localStorage.getItem(K);}catch(e){}if(v!=="light"&&v!=="dark"){var hh=new Date().getHours();v=(hh>=7&&hh<19)?"light":"dark";}set(v===ALTN?"alt":"native",false);}load();window.addEventListener("pageshow",load);btns.forEach(function(b){b.addEventListener("click",function(){set(b.getAttribute("data-t"),true);});});})();</script>
 <script data-goatcounter="https://mellotom.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>(function(){var e=document.querySelector('.gc');if(!e||!window.fetch)return;var p=e.getAttribute('data-path')||location.pathname,L=+e.getAttribute('data-l')||40;fetch('https://mellotom.goatcounter.com/counter/'+encodeURIComponent(p)+'.json').then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||j.count==null)return;var n=String(j.count).trim();e.textContent='visitors '+new Array(Math.max(3,L-9-n.length)).join('.')+' '+n;e.style.visibility='visible';}).catch(function(){});})();</script>
+<script id="lp-js">
+(function(){
+// ---------- lúbadh preset reader: sheet 2 ----------
+var BASE_NAME='Tape-Looper';
+var BASE={RecordSpeed:0,'PlaybackSpeed.Looping':0,'PlaybackSpeed.Oneshot':0,MultiTap:0,SpeedControl:0,SpeedMarkers:[0,0.5,1.0,2.0,4.0],TimePot:2,RecordJack:0,
+ 'ExternalClock.Average':4,'ExternalClock.Resolution':64,'ExternalClock.Timeout':0,ClockDivisions:0,Quantisation:3,EraseRecord:0,MinLength:1280,CrossfadeDuration:250,RetrigDelay:0,MaxDubLevel:0.9,
+ WowFlutterDepth:0.5,CrinkleDepth:0.2,TapeAge:0.3,Hysterisis:0.2,Wear:0.125,Reverb:0.6,Knee:0,Compensation:0.2,LowCutFreq:20,LowCutQ:0.2,HighCutFreq:15000,SpeedSlewTime:25,CapacativeTouchMode:0};
+var ORDER=['RecordSpeed','PlaybackSpeed.Looping','PlaybackSpeed.Oneshot','MultiTap','SpeedControl','SpeedMarkers','TimePot','RecordJack','ExternalClock.Average','ExternalClock.Resolution','ExternalClock.Timeout',
+ 'ClockDivisions','Quantisation','EraseRecord','MinLength','CrossfadeDuration','RetrigDelay','MaxDubLevel','WowFlutterDepth','CrinkleDepth','TapeAge','Hysterisis','Wear','Reverb','Knee','Compensation',
+ 'LowCutFreq','LowCutQ','HighCutFreq','SpeedSlewTime','CapacativeTouchMode'];
+var DIVS={0:'all [1–12, 16, 24, 32, 64]',1:'even [2, 4 … 12, 16, 24, 32, 64]',2:'odd [1, 3, 5, 7, 9, 11]',3:'powers of two [1, 2, 4 … 64]'};
+var QDIVS={0:'all [2–12, 16, 24, 32, 64]',1:'even [2, 4 … 12, 16, 24, 32, 64]',2:'odd [3, 5, 7, 9, 11]',3:'powers of two [2, 4 … 64]'};
+var E={RecordSpeed:{0:'variable',1:'fixed'},'PlaybackSpeed.Looping':{0:'follow',1:'hold'},'PlaybackSpeed.Oneshot':{0:'follow',1:'hold'},MultiTap:{0:'off · single-tap',1:'on · multi-tap'},
+ SpeedControl:{0:'notched',1:'stepped',2:'smooth',3:'v/oct'},TimePot:{0:'crossfade duration',1:'speed slew time',2:'tape emulation amount'},RecordJack:{0:'latching record',1:'gated record',2:'external clock'},
+ ClockDivisions:DIVS,Quantisation:QDIVS,EraseRecord:{0:'punch-in record',1:'tap tempo'},CapacativeTouchMode:{0:'off',1:'stall',2:'dip'}};
+var RANGE={MinLength:[1,480000],CrossfadeDuration:[0,250],RetrigDelay:[0,1000],MaxDubLevel:[0,1],WowFlutterDepth:[0,1],CrinkleDepth:[0,1],TapeAge:[0,1],Hysterisis:[0,1],Wear:[0,1],Reverb:[0,1],Knee:[0,1],Compensation:[0,1],
+ LowCutQ:[0,1],LowCutFreq:[1,20000],HighCutFreq:[20,24000],SpeedSlewTime:[0,2000],'ExternalClock.Average':[1,64],'ExternalClock.Resolution':[0,256],'ExternalClock.Timeout':[0,60]};
+function fmt(k,v){ if(v===undefined) return '—';
+  if(k==='SpeedMarkers') return v.map(function(x){return (+x).toString()+'×';}).join(' · ');
+  if(E[k]) return E[k][v]!==undefined? v+' · '+E[k][v] : v+' · ?';
+  if(k==='MinLength') return v+' samp ≈ '+(v/48).toFixed(1)+' ms';
+  if(k==='CrossfadeDuration'||k==='RetrigDelay'||k==='SpeedSlewTime') return v+' ms';
+  if(k==='LowCutFreq'||k==='HighCutFreq') return v+' Hz';
+  if(k==='ExternalClock.Timeout') return v+' s';
+  return String(v); }
+function say(k,v,p){ var x;
+  switch(k){
+  case 'RecordSpeed': return v==1?'records at original speed, forwards (as in v1) · makes pitch shifting possible':'recording follows the speed knob, like a vari-speed tape deck';
+  case 'PlaybackSpeed.Looping': case 'PlaybackSpeed.Oneshot': return v==1?'each new tap keeps the speed it started at · with multi-tap, taps can sit at different pitches':'playback follows the speed knob';
+  case 'MultiTap': return v==1?'retrig / shift adds playheads (up to 4, the oldest drops) · erase + shift removes one':'a new tap fades the old one out: one seamless playhead';
+  case 'SpeedControl': return ({0:'the speed LEDs light the markers · the knob ramps between them · −4× to 4×',1:'jumps straight from one marker to the next',2:'ignores the markers · smooth −4× to 4×, good for cv',3:'exponential 0.25× – 4× · 0–1 V linear to 0.25×, then an octave per volt · flip the deck for reverse'})[v]||'unknown mode';
+  case 'SpeedMarkers': return (p.SpeedControl==2||p.SpeedControl==3)?'ignored in smooth and v/oct':'knob notches, forward and reverse · 0 is always added';
+  case 'SpeedSlewTime': return v==0?'no slew: speed jumps straight to a new pitch (best for v/oct sequencing)':v>100?'over 100 ms: a wobbly, unpredictable mess':v>15?'tape-like lag and pitch whips on speed changes':'quick, light smoothing';
+  case 'TimePot': return ({0:'the user time mode sets the crossfade length',1:'the user time mode scales the speed slew time',2:'the user time mode scales the tape emulation (wow, flutter, crinkle …)'})[v]||'unknown';
+  case 'CrossfadeDuration': return 'crossfade used whenever the time pot isn’t setting it';
+  case 'MinLength': return 'loop length with the length pot at minimum · short = karplus / granular, long = smoother';
+  case 'RetrigDelay': return v==0?'off · retrig fires immediately':'the retrig jack waits so a sequencer’s pitch lands first';
+  case 'MaxDubLevel': return v<1?'the top of the dub level · old layers fade a little each pass':'full dub level · layers stack until they distort';
+  case 'RecordJack': return ({0:'a trigger toggles record, like the button',1:'records only while the gate is high',2:'the jack becomes a clock input · the loop re-pitches to it'})[v]||'unknown';
+  case 'ExternalClock.Average': return 'pulses averaged · higher = steadier, slower to follow tempo changes';
+  case 'ExternalClock.Resolution': return v==0?'tied to the selected clock division':'clock pulses per full loop · higher = finer sync';
+  case 'ExternalClock.Timeout': return v==0?'off · waits for the next pulse however long it takes':'forgets the clock after this long (sets a slowest speed)';
+  case 'ClockDivisions': return 'the clock-out and sync divisions the time knob steps through';
+  case 'Quantisation': return 'start and length snap to these divisions of the loop · hold shift for an unquantised nudge';
+  case 'EraseRecord': return v==1?'erase + rec taps a tempo · the clock division divides it (1-bar loop, division 4 = tap quarters)':'erase + rec overwrites part of the loop';
+  case 'WowFlutterDepth': return 'slow (wow) and fast (flutter) speed wobble';
+  case 'CrinkleDepth': return 'irregular jolts, like a creased tape loop';
+  case 'TapeAge': return 'bandwidth loss · 0 = fresh and crisp, 1 = muffled';
+  case 'Hysterisis': return 'magnetic smudging of the input';
+  case 'Wear': return 'quiet parts fade over passes, loud parts survive';
+  case 'Reverb': return 'a one-knob reverb';
+  case 'Knee': return v==0?'tanh-like soft saturation':'harder knee · less soft clip, more hard clip on dubs';
+  case 'Compensation': return 'drives the tape hotter, a little bass lift · above 0 can distort as dubs build';
+  case 'LowCutFreq': return 'resonant 2-pole low cut · the tape-machine bass bump';
+  case 'LowCutQ': return v==0?'no resonance':v>0.6?'over 0.6: the editor calls it too much':v>=0.4?'resonant':'gentle';
+  case 'HighCutFreq': return '1-pole high cut · lower = darker, older tape';
+  case 'CapacativeTouchMode': return ({0:'the touch plate does nothing',1:'holding slows the tape to a stall · it ramps back as the charge fades',2:'a touch dips the speed, then it pings back'})[v]||'unknown';
+  }
+  return ''; }
+var LAB={RecordSpeed:'record speed','PlaybackSpeed.Looping':'play · looping','PlaybackSpeed.Oneshot':'play · one-shot',MultiTap:'multi-tap',SpeedControl:'speed control',SpeedMarkers:'speed markers',SpeedSlewTime:'speed slew',
+ TimePot:'time pot · user',CrossfadeDuration:'crossfade',MinLength:'min loop length',RetrigDelay:'retrig delay',MaxDubLevel:'max dub level',RecordJack:'rec jack','ExternalClock.Average':'clock average','ExternalClock.Resolution':'clock resolution',
+ 'ExternalClock.Timeout':'clock timeout',ClockDivisions:'clock divisions',Quantisation:'start · length quant',EraseRecord:'erase + rec',WowFlutterDepth:'wow · flutter',CrinkleDepth:'crinkle',TapeAge:'tape age',Hysterisis:'hysteresis',Wear:'wear',
+ Reverb:'reverb',Knee:'saturation knee',Compensation:'compensation',LowCutFreq:'low cut',LowCutQ:'low cut q',HighCutFreq:'high cut',CapacativeTouchMode:'touch plate'};
+// ---------- parser ----------
+function parse(txt){
+  var name=null, m=/Preset Name:\s*([^\r\n]*)/.exec(txt); if(m) name=m[1].trim();
+  var s=txt.replace(/\/\*[\s\S]*?\*\//g,' ').replace(/\/\/[^\n]*/g,' ').replace(/^\s*#[^\n]*/gm,' ');
+  var i=s.indexOf('{'); if(i<0) throw new Error('no { … } block found'); var pos=i;
+  function ws(){ while(pos<s.length && /[\s,]/.test(s[pos])) pos++; }
+  function val(){ ws(); var c=s[pos];
+    if(c==='{'){ pos++; var o={}; ws(); while(s[pos]!=='}'){ if(pos>=s.length) throw new Error('unclosed {'); var mm=/^[A-Za-z_][A-Za-z0-9_]*/.exec(s.slice(pos)); if(!mm) throw new Error('bad key near “'+s.slice(pos,pos+12)+'”'); pos+=mm[0].length; ws(); if(s[pos]!==':') throw new Error('missing : after '+mm[0]); pos++; o[mm[0]]=val(); ws(); } pos++; return o; }
+    if(c==='['){ pos++; var a=[]; ws(); while(s[pos]!==']'){ if(pos>=s.length) throw new Error('unclosed ['); a.push(val()); ws(); } pos++; return a; }
+    if(c==='"'){ var j=s.indexOf('"',pos+1); var r=s.slice(pos+1,j); pos=j+1; return r; }
+    var mm=/^-?[0-9.]+(e-?[0-9]+)?/.exec(s.slice(pos)); if(!mm) throw new Error('bad value near “'+s.slice(pos,pos+12)+'”'); pos+=mm[0].length; return parseFloat(mm[0]); }
+  var root=val(), out={}, extra={};
+  (function flat(o,pre){ for(var k in o){ var kk=pre?pre+'.'+k:k; if(o[k]&&typeof o[k]==='object'&&!Array.isArray(o[k])) flat(o[k],kk); else out[kk]=o[k]; } })(root,'');
+  for(var k in out) if(ORDER.indexOf(k)<0) extra[k]=out[k];
+  return {name:name, v:out, extra:extra}; }
+// ---------- writer (download) ----------
+function writeFile(st){ var p=st.v, n=st.name||'My Preset', d=new Date(), pad=function(x){return (x<10?'0':'')+x;};
+  var ds=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+  function g(k){ return p[k]!==undefined?p[k]:BASE[k]; }
+  function num(x){ return String(x); }
+  var L=['','#LUB','/*','    Instruō Lubadh V2 Configuration','    ------------------------------------------------------------------','    Preset Name: '+n,'    Config generated on: '+ds+' (lubadh-navigator)','    ------------------------------------------------------------------','*/','','{',
+   '    /* Record Speed: */','    RecordSpeed: '+g('RecordSpeed'),'','    /* Playback Speed: */','    PlaybackSpeed: {','        Looping: '+g('PlaybackSpeed.Looping'),'        Oneshot: '+g('PlaybackSpeed.Oneshot'),'    }','',
+   '    /* Multi-Tap engine: */','    MultiTap: '+g('MultiTap'),'','    /* Speed control: */','    SpeedControl: '+g('SpeedControl'),'    SpeedMarkers: ['+g('SpeedMarkers').map(function(x){ return (+x)%1===0?(+x).toFixed(1).replace(/^0\.0$/,'0'):String(+x); }).join(', ')+']','',
+   '    /* User-definable Time Pot function: */','    TimePot: '+g('TimePot'),'','    /* Record Jack Functionality: */','    RecordJack: '+g('RecordJack'),'','    /* External Clock: */','    ExternalClock:','    {',
+   '        Average: '+g('ExternalClock.Average'),'        Resolution: '+g('ExternalClock.Resolution'),'        Timeout: '+g('ExternalClock.Timeout'),'    }','','    /* Clock Divisions: */','    ClockDivisions: '+g('ClockDivisions'),'',
+   '    /* Start/Length Quantisation: */','    Quantisation: '+g('Quantisation'),'','    /* Erase + Record Button Combination: */','    EraseRecord: '+g('EraseRecord'),'','    /* Minimum Loop Length: */','    MinLength: '+g('MinLength'),'',
+   '    /* Default Crossfade Duration: */','    CrossfadeDuration: '+g('CrossfadeDuration'),'','    /* Retrigger delay: */','    RetrigDelay: '+g('RetrigDelay'),'','    /* Max Dub Level: */','    MaxDubLevel: '+g('MaxDubLevel'),'',
+   '    /* Tape Emulation Settings */','    WowFlutterDepth: '+g('WowFlutterDepth'),'    CrinkleDepth: '+g('CrinkleDepth'),'    TapeAge: '+g('TapeAge'),'    Hysterisis: '+g('Hysterisis'),'    Wear: '+g('Wear'),'    Reverb: '+g('Reverb'),'',
+   '    /* Tape Saturation: */','    Knee: '+g('Knee'),'    Compensation: '+g('Compensation'),'','    /* Input Filtering: */','    LowCutFreq: '+g('LowCutFreq'),'    LowCutQ: '+g('LowCutQ'),'    HighCutFreq: '+g('HighCutFreq'),'',
+   '    /* Speed Slew Time: */','    SpeedSlewTime: '+g('SpeedSlewTime'),'','    /* Capacitive Touch Mode: */','    CapacativeTouchMode: '+g('CapacativeTouchMode')];
+  var ex=st.extra||{}; var ek=Object.keys(ex); if(ek.length){ L.push('','    /* kept from the original file (not used by this guide): */'); ek.forEach(function(k){ if(k.indexOf('.')<0) L.push('    '+k+': '+(Array.isArray(ex[k])?'['+ex[k].join(', ')+']':ex[k])); }); }
+  L.push('    ','}',''); return L.join('\n'); }
+// ---------- share code ----------
+function encode(st){ var parts=[1, encodeURIComponent(st.name||'')]; ORDER.forEach(function(k){ var v=st.v[k]!==undefined?st.v[k]:BASE[k]; parts.push(k==='SpeedMarkers'?v.join('_'):v); }); return parts.join('~'); }
+function decode(code){ var a=code.split('~'); if(a[0]!=='1'||a.length<ORDER.length+2) throw new Error('share code not recognised'); var v={};
+  ORDER.forEach(function(k,i){ var x=a[i+2]; v[k]=k==='SpeedMarkers'?x.split('_').map(parseFloat):parseFloat(x); }); return {name:decodeURIComponent(a[1])||null, v:v, extra:{}}; }
+// ---------- state ----------
+var ST=null, SRC='factory';
+function cur(k){ return ST.v[k]!==undefined?ST.v[k]:BASE[k]; }
+function same(a,b){ return JSON.stringify(a)===JSON.stringify(b); }
+var $=function(id){return document.getElementById(id);};
+function esc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+function row(k){ var v=cur(k), b=BASE[k], ch=!same(v,b), miss=ST.v[k]===undefined, rg=RANGE[k], bad=rg&&typeof v==='number'&&(v<rg[0]||v>rg[1]);
+  var dim=(k.indexOf('ExternalClock')===0&&cur('RecordJack')!=2)||(k==='SpeedMarkers'&&(cur('SpeedControl')>=2))||(k==='CrossfadeDuration'&&false);
+  var note=dim?(k==='SpeedMarkers'?'':' · only with rec jack = external clock'):'';
+  return '<div class="r lp'+(ch?' lch':'')+(dim?' ldim':'')+'"><div class="kc"><span class="v">'+esc(LAB[k])+'</span>'+(ch?'<div class="lwas">◆ was '+esc(fmt(k,b))+'</div>':'')+'</div><div class="a"><span class="b lval">'+esc(fmt(k,v))+'</span> '+esc(say(k,v,{SpeedControl:cur('SpeedControl')}))+esc(note)
+    +(miss?' <span class="lwarn">· not in the file, using '+BASE_NAME.toLowerCase()+'</span>':'')+(bad?' <span class="lwarn">· outside the editor’s range</span>':'')+'</div></div>'; }
+function bar(k){ var v=cur(k), b=BASE[k], ch=!same(v,b), w=Math.max(0,Math.min(1,v))*100, bw=Math.max(0,Math.min(1,b))*100;
+  return '<div class="r lp lbar'+(ch?' lch':'')+'"><div class="kc"><span class="v">'+esc(LAB[k])+'</span></div><div class="a"><div class="lbt"><span class="lbf" style="width:'+w+'%"></span><span class="lbb" style="left:'+bw+'%" title="'+BASE_NAME+'"></span></div><span class="b lval">'+v+'</span> '+esc(say(k,v))+'</div></div>'; }
+function speedFig(){ var sc=cur('SpeedControl'), mk=cur('SpeedMarkers').slice(); if(mk.indexOf(0)<0) mk.push(0);
+  var cx=200, cy=118, R=92, o=['<svg viewBox="0 0 400 162" role="img" aria-label="the speed knob in this preset" style="display:block;width:100%;height:auto">'];
+  function pt(f,r){ var a=Math.PI*(1-f); return [cx+r*Math.cos(a), cy-r*Math.sin(a)]; }
+  o.push('<path d="M'+pt(0,R)+' A'+R+' '+R+' 0 0 1 '+pt(1,R)+'" fill="none" stroke="var(--c3D3E40)" stroke-width="6" stroke-linecap="round"></path>');
+  if(sc==3){ var ls=[[0,'0'],[.2,'.25×'],[.4,'.5×'],[.6,'1×'],[.8,'2×'],[1,'4×']]; o.push('<path d="M'+pt(0,R)+' A'+R+' '+R+' 0 0 1 '+pt(1,R)+'" fill="none" stroke="var(--cD7BB7D)" stroke-width="3"></path>');
+    ls.forEach(function(q){ var p=pt(q[0],R+14), p2=pt(q[0],R-6), p3=pt(q[0],R+6); o.push('<line x1="'+p2[0]+'" y1="'+p2[1]+'" x2="'+p3[0]+'" y2="'+p3[1]+'" stroke="var(--cF2F0EA)" stroke-width="1.4"></line><text x="'+p[0]+'" y="'+(p[1]+3)+'" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="9" font-weight="700" fill="var(--cF2F0EA)">'+q[1]+'</text>'); });
+    o.push('<text x="200" y="158" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="9" fill="var(--cA3A6A6)">v/oct · 0 – 5 V · an octave per volt above 1 V · flip the deck for reverse</text>'); }
+  else { var ms=mk.filter(function(m){return m>0;}).sort(function(a,b){return a-b;}), seq=ms.slice().reverse().map(function(m){return -m;}).concat([0]).concat(ms);
+    if(sc==2) o.push('<path d="M'+pt(0,R)+' A'+R+' '+R+' 0 0 1 '+pt(1,R)+'" fill="none" stroke="var(--cD7BB7D)" stroke-width="3"></path>');
+    else seq.forEach(function(m,i){ var f=seq.length>1?i/(seq.length-1):.5, p=pt(f,R), pl=pt(f,R+17);
+      o.push('<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="5" fill="var(--cD7BB7D)"></circle><text x="'+pl[0].toFixed(1)+'" y="'+(pl[1]+3).toFixed(1)+'" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="8.5" font-weight="700" fill="var(--cF2F0EA)">'+(m==0?'stall':Math.abs(m)+'×')+'</text>'); });
+    o.push('<text x="'+(cx-R-14)+'" y="'+(cy+12)+'" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="8.5" fill="var(--cA3A6A6)">rev</text><text x="'+(cx+R+14)+'" y="'+(cy+12)+'" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="8.5" fill="var(--cA3A6A6)">fwd</text>');
+    o.push('<text x="200" y="158" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="9" fill="var(--cA3A6A6)">'+(sc==2?'smooth: no notches · −4× to 4×':sc==1?'stepped: jumps from marker to marker':'notched: ramps between markers · −4× to 4×')+'</text>'); }
+  o.push('<circle cx="'+cx+'" cy="'+cy+'" r="26" fill="var(--c2B2C2E)" stroke="var(--cF2F0EA)" stroke-width="1.6"></circle><line x1="'+cx+'" y1="'+cy+'" x2="'+cx+'" y2="'+(cy-20)+'" stroke="var(--cF2F0EA)" stroke-width="2.2"></line>');
+  o.push('</svg>'); return o.join(''); }
+function filtFig(){ var fl=cur('LowCutFreq'), q=cur('LowCutQ'), fh=cur('HighCutFreq'), Qf=0.5+q*3, W=400, H=120, x0=34, x1=392, y0=12, y1=96, o=[];
+  function X(f){ return x0+(Math.log10(f)-Math.log10(20))/(3)*(x1-x0); } function Y(db){ return y0+(12-db)/36*(y1-y0); }
+  var pts=[]; for(var i=0;i<=160;i++){ var f=20*Math.pow(1000,i/160), r=f/fl, hp=(r*r)/Math.sqrt(Math.pow(1-r*r,2)+Math.pow(r/Qf,2)), lp=1/Math.sqrt(1+Math.pow(f/fh,2)); var db=20*Math.log10(hp*lp); db=Math.max(-24,Math.min(12,db)); pts.push(X(f).toFixed(1)+','+Y(db).toFixed(1)); }
+  o.push('<svg viewBox="0 0 400 '+H+'" role="img" aria-label="the input filter in this preset, drawn approximately" style="display:block;width:100%;height:auto">');
+  [0,-12].forEach(function(d){ o.push('<line x1="'+x0+'" y1="'+Y(d)+'" x2="'+x1+'" y2="'+Y(d)+'" stroke="var(--c3D3E40)" stroke-width="1"'+(d?' stroke-dasharray="2 3"':'')+'></line><text x="'+(x0-4)+'" y="'+(Y(d)+3)+'" text-anchor="end" font-family="Roboto Mono, monospace" font-size="8" fill="var(--cA3A6A6)">'+d+' dB</text>'); });
+  [[20,'20'],[100,'100'],[1000,'1k'],[10000,'10k'],[20000,'20k']].forEach(function(t){ o.push('<text x="'+X(t[0])+'" y="'+(y1+14)+'" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="8" fill="var(--cA3A6A6)">'+t[1]+'</text>'); });
+  o.push('<polyline points="'+pts.join(' ')+'" fill="none" stroke="var(--cD7BB7D)" stroke-width="2.2"></polyline>');
+  o.push('<text x="'+x1+'" y="'+(y0+2)+'" text-anchor="end" font-family="Roboto Mono, monospace" font-size="8" fill="var(--cA3A6A6)">Hz · shape approximate</text></svg>'); return o.join(''); }
+function plain(){ var s=[], mt=cur('MultiTap')==1, hold=cur('PlaybackSpeed.Looping')==1||cur('PlaybackSpeed.Oneshot')==1, sc=cur('SpeedControl');
+  if(mt&&hold) s.push('polyphonic: up to four taps, each held at its own pitch');
+  else if(mt) s.push('multi-tap: shift adds playheads for delays and granular smears');
+  if(sc==3) s.push('pitch it from a sequencer: speed tracks 1v/oct'+(cur('RetrigDelay')>0?', and retrig waits '+cur('RetrigDelay')+' ms for the pitch':''));
+  if(!mt&&sc!=3&&cur('RecordJack')==0) s.push('a straight looper: one playhead, the speed knob '+(sc==2?'smooth':sc==1?'stepping between markers':'ramping between notches'));
+  s.push('the user time mode controls '+(E.TimePot[cur('TimePot')]||'?'));
+  if(cur('RecordJack')==2) s.push('clock it: the rec jack sets the loop to an external clock');
+  if(cur('RecordJack')==1) s.push('gate it: record only while the rec jack is high');
+  if(cur('RecordSpeed')==1) s.push('fixed-speed recording, as in v1 · pitch shifting');
+  if(cur('EraseRecord')==1) s.push('erase + rec taps the tempo');
+  var t=(cur('WowFlutterDepth')+cur('CrinkleDepth')+cur('TapeAge')+cur('Hysterisis')+cur('Wear'))/5;
+  s.push(t>=0.5?'heavy tape: lots of warble, age and wear':t<=0.08?'clean: almost no tape colour':'some tape colour');
+  if(cur('CapacativeTouchMode')>0) s.push('the touch plate '+(cur('CapacativeTouchMode')==1?'stalls':'dips')+' the tape');
+  return s; }
+var FACT=[['01','Tape-Looper','close to the original lúbadh, with vari-speed recording and the time pot on tape amount',1],['02','Clean','vari-speed recording, the time pot on crossfade, most tape emulation off'],['03','Classic','mimics the v1 firmware · vari-speed recording off'],
+ ['04','Multi-Tape','multi-tap delay lines'],['05','Clockable','built for an external clock · chopping loops, beat repeats'],['06','Octave-Delay','a pitch-shifting octave delay line'],['07','SequencingMono','1v/oct pitch plus a retrigger delay so pitch lands before the note'],
+ ['08','SequencingPoly','multi-tap SequencingMono with playback speed on hold · polyphonic loop playback'],['09','Melontron','a knock-off mellotron · 4-note polyphony from multi-taps and 1v/oct'],['10','Broken-Tape','maxed-out tape emulation for warbled distortion']];
+function render(){ if(!ST) return; var nm=ST.name||'untitled', diffs=ORDER.filter(function(k){ return !same(cur(k),BASE[k]); });
+  $('lp-name').textContent=nm; $('lp-src').textContent=SRC; $('lp-nchg').textContent=diffs.length; $('lp-stat-mt').textContent=cur('MultiTap')==1?'on':'off'; $('lp-stat-sc').textContent=E.SpeedControl[cur('SpeedControl')]||'?';
+  $('lp-speed').innerHTML=['RecordSpeed','PlaybackSpeed.Looping','PlaybackSpeed.Oneshot','SpeedControl','SpeedMarkers','SpeedSlewTime'].map(row).join('');
+  $('lp-speedfig').innerHTML=speedFig();
+  $('lp-time').innerHTML=['TimePot','CrossfadeDuration','MultiTap','MaxDubLevel','MinLength','RetrigDelay'].map(row).join('');
+  $('lp-clock').innerHTML=['RecordJack','ExternalClock.Average','ExternalClock.Resolution','ExternalClock.Timeout','ClockDivisions','Quantisation','EraseRecord'].map(row).join('');
+  $('lp-tape').innerHTML=['WowFlutterDepth','CrinkleDepth','TapeAge','Hysterisis','Wear','Reverb','Knee','Compensation'].map(bar).join('');
+  $('lp-filt').innerHTML=['LowCutFreq','LowCutQ','HighCutFreq'].map(row).join(''); $('lp-filtfig').innerHTML=filtFig();
+  $('lp-touch').innerHTML=row('CapacativeTouchMode');
+  $('lp-plain').innerHTML=plain().map(function(t){ return '<div class="lpl">◆ '+esc(t)+'</div>'; }).join('');
+  $('lp-raw').innerHTML=ORDER.map(function(k){ var v=cur(k), c=!same(v,BASE[k]); return '<div class="lrw'+(c?' lrc':'')+'"><span>'+k.replace('PlaybackSpeed.','Playback.').replace('ExternalClock.','Clock.')+'</span><b>'+(Array.isArray(v)?v.join(', '):v)+'</b><i>'+(c?'was '+(Array.isArray(BASE[k])?BASE[k].join(', '):BASE[k]):'')+'</i></div>'; }).join('');
+  var ek=Object.keys(ST.extra||{}); $('lp-extra').innerHTML=ek.length?'<div class="ldr"><span class="ldo">also in the file, not explained here: '+esc(ek.join(', '))+'</span></div>':'';
+  // sheet 1 tags: ◆ rows switch on / off for the active preset
+  var C=[cur('MultiTap')==1,cur('RecordJack')==1,cur('SpeedControl')==3,cur('SpeedControl')==3,cur('RecordJack')==2,cur('EraseRecord')==1];
+  document.querySelectorAll('#sheet .r.ps').forEach(function(r,i){ if(i>=C.length) return; var z=r.querySelector('.pz'); if(!z) return; var t=z.querySelector('.lpz'); if(!t){ t=document.createElement('span'); t.className='lpz'; z.appendChild(t); }
+    t.textContent=' · '+(C[i]?'on':'off')+' in '+nm.toLowerCase(); r.classList.toggle('lpoff',!C[i]); });
+  try{ localStorage.setItem('lubadh-preset',encode(ST)); }catch(e){}
+}
+function setStatus(t,bad){ var e=$('lp-status'); e.textContent=t; e.style.color=bad?'var(--cE5654E)':'var(--cA3A6A6)'; }
+function loadText(txt,fname){ try{ var st=parse(txt); if(!st.name&&fname) st.name=fname.replace(/\.txt$/i,''); ST=st; SRC=fname?'file · '+fname:'file'; render(); setStatus('loaded '+(fname||'file')+' · '+Object.keys(st.v).length+' settings read'); history.replaceState(null,'',location.pathname+location.search); }
+  catch(e){ setStatus('couldn’t read that file: '+e.message,true); } }
+function factory(){ ST={name:'Tape-Looper',v:JSON.parse(JSON.stringify(BASE)),extra:{}}; SRC='factory · 01-Tape-Looper'; render(); setStatus('showing the factory tape-looper preset'); history.replaceState(null,'',location.pathname+location.search); }
+// ---------- wiring ----------
+var dz=$('lp-drop'), fi=$('lp-file');
+dz.addEventListener('click',function(){ fi.click(); });
+dz.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); fi.click(); } });
+fi.addEventListener('change',function(){ var f=fi.files[0]; if(!f) return; var r=new FileReader(); r.onload=function(){ loadText(r.result,f.name); }; r.readAsText(f); fi.value=''; });
+['dragenter','dragover'].forEach(function(ev){ dz.addEventListener(ev,function(e){ e.preventDefault(); dz.classList.add('lon'); }); });
+['dragleave','drop'].forEach(function(ev){ dz.addEventListener(ev,function(e){ e.preventDefault(); dz.classList.remove('lon'); }); });
+dz.addEventListener('drop',function(e){ var f=e.dataTransfer.files[0]; if(!f) return; var r=new FileReader(); r.onload=function(){ loadText(r.result,f.name); }; r.readAsText(f); });
+$('lp-share').addEventListener('click',function(){ var u=location.origin+location.pathname+'#lub='+encode(ST);
+  function done(){ setStatus('share link copied · it opens this preset on sheet 2'); }
+  if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(done,function(){ prompt('copy this link',u); }); else prompt('copy this link',u);
+  history.replaceState(null,'','#lub='+encode(ST)); });
+$('lp-dl').addEventListener('click',function(){ var n=(ST.name||'My-Preset').replace(/[^A-Za-z0-9 _-]/g,'').trim().replace(/\s+/g,'-')||'My-Preset';
+  var b=new Blob([writeFile(ST)],{type:'text/plain'}), a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=n+'.txt'; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); },500);
+  setStatus('downloaded '+n+'.txt · copy it into the presets folder on the usb stick'); });
+$('lp-reset').addEventListener('click',factory);
+$('lp-fact').innerHTML=FACT.map(function(f){ return '<div class="r lp lfr'+(f[3]?'':' ldim')+'"><div class="kc"><span class="b">'+f[0]+'</span> <span class="v">'+f[1].toLowerCase()+'</span></div><div class="a">'+esc(f[2])+(f[3]?' <button type="button" class="lbtn lbs" data-f="1">load</button>':' <span class="lwarn">· values coming soon</span>')+'</div></div>'; }).join('');
+document.querySelectorAll('#lp-fact [data-f]').forEach(function(b){ b.addEventListener('click',factory); });
+// ---------- start ----------
+var h=location.hash.match(/#lub=([^&]+)/);
+if(h){ try{ ST=decode(h[1]); SRC='share link'; render(); setStatus('opened from a share link'); }catch(e){ factory(); setStatus('that share link didn’t decode · showing tape-looper',true); } }
+else { var sv=null; try{ sv=localStorage.getItem('lubadh-preset'); }catch(e){}
+  if(sv){ try{ ST=decode(sv); SRC='last preset in this browser'; render(); setStatus('your last preset, remembered in this browser'); }catch(e){ factory(); } } else factory(); }
+})();
+</script>
 </body>
 </html>
